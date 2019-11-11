@@ -1,0 +1,50 @@
+Script started on Fri 04 Oct 2019 07:28:40 PM PDT
+]0;ssonlam@uw1-320-02: ~ssonlam@uw1-320-02:~$ g++ -std=c++11 lab1.cpp poly.cpp
+]0;ssonlam@uw1-320-02: ~ssonlam@uw1-320-02:~$ vsl[K[Kalgrind ./a.out
+==27388== Memcheck, a memory error detector
+==27388== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==27388== Using Valgrind-3.12.0.SVN and LibVEX; rerun with -h for copyright info
+==27388== Command: ./a.out
+==27388== 
+A = +5x^7 -4x^3 +10x -2
+B = +3x^4 +1x^3
+
+Compute C = A + B:  +5x^7 +3x^4 -3x^3 +10x -2
+
+A is not == B
+A is not == B
+
+Compute  Z1 = A2 - B2:  +5x^7 -3x^4 -5x^3 +10x -2
+Compute  Z2 = B2 - A2:  -5x^7 +3x^4 +5x^3 -10x +2
+
+Compute  D = A * B - 15
+Before: D = +5x^7
+After:  D = +15x^11 +5x^10 -12x^7 -4x^6 +30x^5 +4x^4 -2x^3 -15
+
+Test assignment operators
+X =
+Y =
+
+Get and Set coefficient
+coeff of subscript 0 of D is: -15
+Doing getCoeff for term -20000
+D = +50x^20000 +15x^11 +5x^10 -12x^7 -4x^6 +30x^5 +4x^4 -2x^3 +50
+
+==27388== 
+==27388== HEAP SUMMARY:
+==27388==     in use at exit: 144 bytes in 14 blocks
+==27388==   total heap usage: 42 allocs, 28 frees, 154,612 bytes allocated
+==27388== 
+==27388== LEAK SUMMARY:
+==27388==    definitely lost: 144 bytes in 14 blocks
+==27388==    indirectly lost: 0 bytes in 0 blocks
+==27388==      possibly lost: 0 bytes in 0 blocks
+==27388==    still reachable: 0 bytes in 0 blocks
+==27388==         suppressed: 0 bytes in 0 blocks
+==27388== Rerun with --leak-check=full to see details of leaked memory
+==27388== 
+==27388== For counts of detected and suppressed errors, rerun with: -v
+==27388== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+]0;ssonlam@uw1-320-02: ~ssonlam@uw1-320-02:~$ exit
+
+Script done on Fri 04 Oct 2019 07:29:17 PM PDT
